@@ -55,9 +55,8 @@ zomato_clone/
 │
 └── Documentation/
     ├── API_INTEGRATION_GUIDE.md
-    ├── INTEGRATION_SUMMARY.md
     ├── QUICK_START.md
-    └── TESTING_CHECKLIST.md
+   
 ```
 
 ## 🚀 Quick Start
@@ -114,8 +113,7 @@ Phone: 9876543210
 
 - **[Quick Start Guide](QUICK_START.md)** - Get up and running quickly
 - **[API Integration Guide](API_INTEGRATION_GUIDE.md)** - Complete API documentation
-- **[Integration Summary](INTEGRATION_SUMMARY.md)** - What's been implemented
-- **[Testing Checklist](TESTING_CHECKLIST.md)** - Verify your setup
+
 
 ## 🛠️ Tech Stack
 
@@ -144,7 +142,6 @@ Phone: 9876543210
 4. **User Profile Page** - User dashboard
 5. **Add Restaurant Page** - For restaurant owners
 6. **Order Page** - Order management
-7. **Get The App Page** - Mobile app promotion
 
 ## 🔌 API Endpoints
 
@@ -179,92 +176,4 @@ Phone: 9876543210
 
 [See full API documentation](API_INTEGRATION_GUIDE.md)
 
-## 🎨 Custom Hooks
 
-- `useAuth()` - Authentication state
-- `useRestaurants()` - Fetch restaurants
-- `useRestaurant()` - Single restaurant
-- `useOrders()` - Order management
-- `useReviews()` - Review system
-- `useUserProfile()` - User profile data
-- `useBookmarks()` - Saved restaurants
-
-## 🧪 Testing
-
-Run the testing checklist:
-```bash
-# See TESTING_CHECKLIST.md for detailed tests
-```
-
-Key tests:
-- ✅ Authentication (login, signup, OTP)
-- ✅ Restaurant browsing and filtering
-- ✅ API integration
-- ✅ Error handling
-- ✅ Loading states
-
-## 📊 Database Models
-
-- **User**: Authentication, profile, social features
-- **Restaurant**: Details, menu, location, ratings
-- **Order**: Items, status, payment, delivery
-- **Review**: Rating, comments, photos, likes
-- **Booking**: Table reservations, confirmations
-
-## 🔐 Security Features
-
-- JWT token authentication
-- Password hashing (bcrypt)
-- Input validation
-- XSS protection (Helmet)
-- Rate limiting
-- CORS configuration
-- Secure headers
-
-## 🌐 Environment Variables
-
-### Backend (.env)
-```env
-MONGODB_URI=mongodb+srv://...
-JWT_SECRET=your-secret-key
-JWT_EXPIRE=30d
-PORT=5000
-NODE_ENV=development
-```
-
-### Frontend
-API URL configured in `src/services/api.js`:
-```javascript
-const API_URL = 'http://localhost:5000/api';
-```
-
-## ScreenShots
-
-# Home Page:
-
-<img src="Project Images/Home.png" />
-
-
-# Add Restaurant Page:
-
-<img src="Project Images/AddRestaurant.png" />
-
-
-# Order Online Page:
-
-<img src="Project Images/OrderOnlinePage.png" />
-
-
-# User Profile Page:
-
-<img src="Project Images/UserProfilePage.png" />
-
-
-# Hotel Order Page:
-
-<img src="Project Images/HotelOrderPage.png" />
-
-
-### Project Started Date: june, 11, 2022
-
-### Project Completed Date: july 19, 2022
