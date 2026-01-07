@@ -1,4 +1,4 @@
-# Zomato Clone - Full Stack Application
+# Feasto Clone - Full Stack Application
 
 A complete full-stack clone of Zomato built with React.js (frontend) and Node.js/Express (backend), featuring user authentication, restaurant browsing, ordering system, reviews, and user profiles.
 
