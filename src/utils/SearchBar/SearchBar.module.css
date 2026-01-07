@@ -1,0 +1,220 @@
+.outerDiv {
+    width: 98%;
+    height: 50px;
+    padding: 5px;
+    border-radius: 10px;
+    border: var(--brd4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow: var(--box-shadow3);
+    background-color: var(--bg-white);
+}
+
+.srch1,
+.srch2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.srch1 {
+    width: 30%;
+}
+
+.srch2 {
+    width: 70%;
+}
+
+.hr {
+    margin: 0px 5px;
+    height: 40%;
+    font-weight: 600;
+    background-color: var(--color-p2-text);
+}
+
+.inpt {
+    width: 95%;
+    margin: 0 5px;
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--color-p5-text);
+}
+
+.inpt::placeholder {
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--color-p5-text);
+    letter-spacing: 0.6px;
+}
+
+.downArrow {
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+}
+
+.icon {
+    width: 25px;
+    height: 23px;
+}
+
+.dropdownBox {
+    position: absolute;
+    top: 65px;
+    left: 0px;
+    width: 100%;
+    max-height: 400px;
+    overflow-y: auto;
+    background-color: var(--bg-white);
+    border-radius: 10px;
+    border: var(--brd4);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+}
+
+.dropdown {
+    padding: 5px 0;
+}
+
+.loadingState {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    gap: 10px;
+    color: #666;
+}
+
+.spinner {
+    width: 20px;
+    height: 20px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #e23744;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.resultItem {
+    padding: 12px 15px;
+    cursor: pointer;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background-color 0.2s ease;
+}
+
+.resultItem:hover {
+    background-color: #f8f8f8;
+}
+
+.resultItem:last-child {
+    border-bottom: none;
+}
+
+.resultContent {
+    display: flex;
+    gap: 12px;
+}
+
+.restaurantInfo {
+    flex: 1;
+}
+
+.restaurantName {
+    margin: 0 0 6px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1c1c1c;
+}
+
+.restaurantMeta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 6px;
+}
+
+.rating {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #1c1c1c;
+    padding: 2px 6px;
+    background-color: #48c479;
+    color: white;
+    border-radius: 4px;
+}
+
+.cuisines {
+    font-size: 13px;
+    color: #696969;
+}
+
+.restaurantDetails {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 6px;
+    font-size: 12px;
+    color: #696969;
+}
+
+.location {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.cost {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.dishes {
+    font-size: 12px;
+    color: #828282;
+    margin-top: 6px;
+}
+
+.dishLabel {
+    font-weight: 600;
+    color: #1c1c1c;
+}
+
+.noResults {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.noResultsIcon {
+    font-size: 48px;
+    margin-bottom: 10px;
+    opacity: 0.5;
+}
+
+.noResults p {
+    margin: 0 0 8px 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: #1c1c1c;
+}
+
+.noResults span {
+    font-size: 13px;
+    color: #828282;
+}

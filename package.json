@@ -1,0 +1,38 @@
+{
+  "name": "zomato_clone",
+  "version": "0.0.0",
+  "private": true,
+  "description": "**Live App Demo Link:** [Zomato Clone Live App Demo](https://zomatoclone.koushilmankali.in/)",
+  "homepage": "https://github.com/koushil-mankali/zomato_clone#readme",
+  "bugs": {
+    "url": "https://github.com/koushil-mankali/zomato_clone/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/koushil-mankali/zomato_clone.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "vite.config.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "formik": "^2.2.9",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "6",
+    "react-slick": "^0.29.0",
+    "slick-carousel": "^1.8.1",
+    "yup": "^0.32.11"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@vitejs/plugin-react": "^1.3.0",
+    "vite": "^2.9.9"
+  }
+}
