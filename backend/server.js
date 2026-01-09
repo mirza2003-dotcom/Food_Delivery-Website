@@ -5,6 +5,8 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 import cookieParser from 'cookie-parser';
 import rateLimit from 'express-rate-limit';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
 // Load env vars
 dotenv.config();
@@ -27,6 +29,10 @@ import errorHandler from './middleware/error.js';
 connectDB();
 
 const app = express();
+
+// __dirname replacement for ESM
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Body parser
 app.use(express.json());
@@ -87,6 +93,16 @@ app.get('/', (req, res) => {
 // Error handler (must be last)
 app.use(errorHandler);
 
+// Serve frontend build in production
+if (process.env.NODE_ENV === 'production') {
+  const clientDistPath = path.resolve(__dirname, '..', 'dist');
+  app.use(express.static(clientDistPath));
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(clientDistPath, 'index.html'));
+  });
+}
+
 // Handle unhandled promise rejections
 process.on('unhandledRejection', (err, promise) => {
   console.log(`Error: ${err.message}`);
@@ -101,3 +117,4 @@ const server = app.listen(PORT, () => {
 });
 
 export default app;
+
