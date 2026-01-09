@@ -93,15 +93,22 @@ app.get('/', (req, res) => {
 // Error handler (must be last)
 app.use(errorHandler);
 
-// Serve frontend build in production
-if (process.env.NODE_ENV === 'production') {
-  const clientDistPath = path.resolve(__dirname, '..', 'dist');
-  app.use(express.static(clientDistPath));
+// Serve frontend build (dev & production)
+const clientDistPath = path.resolve(__dirname, '..', 'dist');
+app.use(express.static(clientDistPath, { 
+  index: false,
+  maxAge: '1d'
+}));
 
-  app.get('*', (req, res) => {
+// SPA fallback: serve index.html for all non-API routes
+app.get('*', (req, res) => {
+  // Don't serve index.html for API or existing files
+  if (!req.path.startsWith('/api')) {
     res.sendFile(path.join(clientDistPath, 'index.html'));
-  });
-}
+  } else {
+    res.status(404).json({ success: false, message: 'API route not found' });
+  }
+});
 
 // Handle unhandled promise rejections
 process.on('unhandledRejection', (err, promise) => {
@@ -117,4 +124,3 @@ const server = app.listen(PORT, () => {
 });
 
 export default app;
-
