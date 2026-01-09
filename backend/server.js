@@ -55,6 +55,13 @@ if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
 
+// Serve frontend build EARLY (before routes)
+const clientDistPath = path.resolve(__dirname, '..', 'dist');
+app.use(express.static(clientDistPath, { 
+  index: false,
+  maxAge: '1d'
+}));
+
 // Rate limiting
 const limiter = rateLimit({
   windowMs: 10 * 60 * 1000, // 10 minutes
@@ -90,15 +97,8 @@ app.get('/', (req, res) => {
   });
 });
 
-// Error handler (must be last)
+// Error handler (must be last before SPA fallback)
 app.use(errorHandler);
-
-// Serve frontend build (dev & production)
-const clientDistPath = path.resolve(__dirname, '..', 'dist');
-app.use(express.static(clientDistPath, { 
-  index: false,
-  maxAge: '1d'
-}));
 
 // SPA fallback: serve index.html for all non-API routes
 app.get('*', (req, res) => {
@@ -124,4 +124,5 @@ const server = app.listen(PORT, () => {
 });
 
 export default app;
+
 
