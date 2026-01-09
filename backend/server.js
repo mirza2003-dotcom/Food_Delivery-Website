@@ -87,16 +87,6 @@ app.get('/api/health', (req, res) => {
   });
 });
 
-// Welcome route
-app.get('/', (req, res) => {
-  res.status(200).json({
-    success: true,
-    message: 'Welcome to Zomato Clone API',
-    version: '1.0.0',
-    documentation: '/api/docs'
-  });
-});
-
 // Error handler (must be last before SPA fallback)
 app.use(errorHandler);
 
@@ -124,5 +114,6 @@ const server = app.listen(PORT, () => {
 });
 
 export default app;
+
 
 
