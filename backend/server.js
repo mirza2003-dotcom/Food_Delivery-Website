@@ -104,7 +104,7 @@ app.get('*', (req, res) => {
 process.on('unhandledRejection', (err, promise) => {
   console.log(`Error: ${err.message}`);
   // Close server & exit process
-  server.close(() => process.exit(1));
+  if (server) server.close(() => process.exit(1));
 });
 
 const PORT = process.env.PORT || 5000;
@@ -114,6 +114,7 @@ const server = app.listen(PORT, () => {
 });
 
 export default app;
+
 
 
 
