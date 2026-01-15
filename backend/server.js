@@ -56,11 +56,7 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 // Serve frontend build EARLY (before routes)
-const clientDistPath = path.resolve(__dirname, '..', 'dist');
-app.use(express.static(clientDistPath, { 
-  index: false,
-  maxAge: '1d'
-}));
+app.use(express.static("dist"));
 
 // Rate limiting
 const limiter = rateLimit({
